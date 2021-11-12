@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #09383e;
+}
+
+.texto {
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 3.5rem;
+    color: #044952;
+    text-transform: uppercase;
+}
+
+.texto span {
+    animation: animate 5s linear infinite;
+}
+
+.texto span:nth-child(even) {
+    animation-delay: .4s;
+}
+
+@keyframes animate {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
+        color: #044952;
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, 0 0 80px #03bcf4, 0 0 160px #03bcf4, 0 0 400px #03bcf4;
+    }
+}
+
+.card {
+    border-radius: 20px;
+    position: relative;
+    width: 360px;
+    height: 470px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.15), 0 20px 20px rgba(0, 0, 0, 0.4);
+}
+.card:hover {
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.15), 0 20px 20px rgba(0, 0, 0, 0.4);
+    transform: perspective(2000px) translateX(50%);
+}
+
+.card .cover {
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+    transform-origin: left;
+}
+
+.card:hover .cover {
+    transform: rotateY(-180deg);
+}
+
+.card .cover::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 150%;
+    background-color: #fff;
+    transform: rotate(36.5deg);
+    box-shadow: 0 0 0 20px #47bfce;
+    transition: .7s;
+    transition-delay: .6s;
+}
+
+.card:hover .cover::before {
+    width: 0;
+    box-shadow: 0 0 0 290px #47bfce;
+    transform: rotate(143.5deg);
+}
+
+.phone2 {
+    max-width: 120%;
+    z-index: 1;
+}
+
+.phone1 {
+    width: 200px;
+    height: 300px;
+}
+
+.card .detalhes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    z-index: 1;
+}
+
+.card .detalhes h3 {
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.card .detalhes h2 {
+    font-size: 1.5rem;
+    color: #e82a5b;
+    font-weight: 600;
+}
+
+.card .detalhes a {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #47bfce;
+    color: #fff;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+}
